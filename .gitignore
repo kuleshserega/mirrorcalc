@@ -1,4 +1,5 @@
 # Environment
 .env/
 mirrorcalc/settings_local.py
+mirrorcalc/static/
 *.pyc
