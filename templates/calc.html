@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} Profile details {% endblock %}
+{% block content %}
+<div class="container mt-100">
+  <p class="h1 text-center">Mirror calculator</p>
+  <div class="row is-table-row">
+    <div class="col-md-8 well">
+      <h6>Details: {% if result %}{{ result }}{% else %}Empty{% endif %}</h6>
+      <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" name="calc" value="Calc" />
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}

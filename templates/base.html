@@ -1,4 +1,5 @@
-{% load staticfiles %}
+{% load static %}
+
 <!doctype html>
 <html>
   <head>
@@ -17,17 +18,11 @@
   </head>
   <body>
     <div class="block-header">
-      <a href="#"><img src="{% static 'img/true.png' %}" /></a>
-      {% if request.user.username %}
-        <div class="logout">
-          <a class="btn btn-success btn-lg" href="{% url 'userapp:profile' %}">{{ request.user.last_name }} {{ request.user.first_name }}</a>
-          <a class="btn btn-success btn-lg" href="{% url 'userapp:logout' %}"> <span class="glyphicon glyphicon-log-out"></span> Log out </a>
-        </div>
-      {% endif %}
+      <a href="#"><img style="height: 40px; margin: 20px;" src="{% static 'img/true.png' %}" /></a>
     </div>    
     <div id="content">
       {% block content %}{% endblock %}
-      <div class="copyright"> 2020 </div>
+      <div class="copyright"> Copyright © 2020 </div>
     </div>
   </body>
 </html>
